@@ -16,5 +16,16 @@ rawdata.split(/\r?\n/).forEach(line =>  {
 });
 
 // find the greatest
-const max = Math.max(...calorieData);
+let max = Math.max(...calorieData);
 console.log('max: ', max);
+
+// find the top 3 total calories
+let topThree = 0;
+let maxIndex = calorieData.indexOf(max);
+for (let i = 0; i < 3; i++) {
+    max = Math.max(...calorieData)
+    topThree += max;
+    maxIndex = calorieData.indexOf(max);
+    calorieData[maxIndex] = 0;
+}
+console.log(topThree);
