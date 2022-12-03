@@ -24,12 +24,9 @@ rawdata.split(/\r?\n/).forEach(line => {
 console.log(rsPriorities);
 
 // part 2
-let lines = rawdata.split("\n");
+let lines = rawdata.split(/\r?\n/);
 rsPriorities = 0;
 for (let i = 0; i < lines.length; i += 3) {
-    for (let j = 0; j < 3; j++) {
-        lines[i+j] = lines[i+j].replace("\r", "");
-    }
     const group = lines.slice(i, i + 3);
     const rs1 = group[0].split("");
     const rs2 = group[1].split("");
